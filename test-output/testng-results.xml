@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="29" started-at="2024-01-31T13:36:02Z" finished-at="2024-01-31T13:36:02Z">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="29" started-at="2024-01-31T13:36:02Z" finished-at="2024-01-31T13:36:02Z">
+      <class name="automation.automation.First">
+        <test-method status="PASS" signature="firstscript()[pri:0, instance:automation.automation.First@6f7fd0e6]" name="firstscript" duration-ms="8" started-at="2024-01-31T13:36:02Z" finished-at="2024-01-31T13:36:02Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- firstscript -->
+      </class> <!-- automation.automation.First -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
