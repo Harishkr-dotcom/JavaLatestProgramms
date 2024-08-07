@@ -14,27 +14,29 @@ public class S9 {
 	 * }
 	 */
 
-	 public static void main(String[] args) {
-	        String str = "pwwkew";
-	        int longestSubstring = longestSubstringWithoutRepeating(str);
-	        System.out.println("Longest substring without repeating characters: " + longestSubstring);
-	        //System.out.println("Length of the longest substring: " + longestSubstring.length());
-	    }
+	public static void main(String[] args) {
+		String str = "pwwkew";
+		int longestSubstring = longestSubstringWithoutRepeating(str);
+		System.out.println("Longest substring without repeating characters: " + longestSubstring);
+	}
 
-	    public static int longestSubstringWithoutRepeating(String str) {
-	    	int longestSubString=0;
-			int left=0;
-			int[] charArr = new int[128];
-			int val=0;
-			
-			for(int right=0;right<str.length();right++)
-			{
-				val= str.charAt(right);
-				left=Math.max(left,charArr[val]);
-				longestSubString=Math.max(longestSubString, right-left+1);
-				charArr[val]=right+1;
-			}
-			
-			return longestSubString;
-	    }
+	public static int longestSubstringWithoutRepeating(String str) {
+		int longestSubString = 0;
+		int left = 0;
+		int[] charArr = new int[128];
+		int val = 0;
+
+		for (int right = 0; right < str.length(); right++) {
+			System.out.println(str.charAt(right)+"charector");
+			val = str.charAt(right);
+			System.out.println(val+"val");
+			left = Math.max(left, charArr[val]);
+			System.out.println(charArr[val]+"charArrval");
+			System.out.println(left+"left");
+			longestSubString = Math.max(longestSubString, right - left + 1);
+			charArr[val] = right + 1;
+		}
+
+		return longestSubString;
+	}
 }

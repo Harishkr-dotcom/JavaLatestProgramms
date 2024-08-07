@@ -20,7 +20,7 @@ public class S3 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		String s = "harish";
+		String s = "Harishr";
 		System.out.println(removeduplicates(s));
 	}
 

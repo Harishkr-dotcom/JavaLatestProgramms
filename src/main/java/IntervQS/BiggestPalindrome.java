@@ -1,77 +1,46 @@
 package IntervQS;
 
+import java.util.HashMap;
+import java.util.Map;
+
+
 public class BiggestPalindrome {
 	public static void main(String[] args) {
-		int[] nums = {1, 2342, 55454545, 9090940, 1641};
-		System.out.println(BiggestPalindrome(nums));
+		// TODO Auto-generated method stub
+		int[] arr3 = {1, 232, 5455455, 909090, 161};
+		System.out.println(BiggestPalindrome.palindrome(arr3));
 
 	}
-
-	public static String BiggestPalindrome(int[] nums)
-	{
-		int bigNumber=Integer.MIN_VALUE;
-		int secondBigNumber=Integer.MIN_VALUE;
-		
-		for(int num: nums)
-		{
-			if(num>bigNumber)
-			{
-				/* System.out.println("checking big number: "+num); */
-				if(isPalindrome(num))
-				{
-					secondBigNumber=bigNumber;
-					bigNumber=num;
-					/*
-					 * System.out.println("new big number: "+bigNumber);
-					 * System.out.println("new second big number: "+secondBigNumber);
-					 */
-				}
-					
+	
+	public static boolean ispalindrome(int num) {
+		String s= Integer.toString(num);
+		Map<Character, Integer> count = new HashMap<Character, Integer>();
+		for ( char c : s.toCharArray()) {
+			if(count.containsKey(c)) {
+				count.put(c, count.get(c)+1);
+			}else {
+				count.put(c, 1);
 			}
-			
-			else if((num>secondBigNumber) && (num<bigNumber))
-			{
-				/* System.out.println("checking second big number: "+num); */
-				if(isPalindrome(num))
-				{
-					secondBigNumber=num;
-					/* System.out.println("new second big number: "+secondBigNumber); */
-				}
+		}	
+		int rep =0;
+		for(Map.Entry<Character, Integer> entry: count.entrySet()){
+			if(entry.getValue()%2!=0) {
+				rep++;
 			}
-				
 		}
-		
-		return Integer.toString(bigNumber);
+		return rep<=1;
 	}
 	
-	
-	public static boolean isPalindrome(int num)
-	{
-		String number = Integer.toString(num);
-		int[] char_set =new int[128];
-		boolean oddOccurance=false;
-		
-		for(char ch:number.toCharArray())
-		{
-			char_set[ch]++;
-		}
-		
-		for(int count:char_set)
-		{
-			if(count%2==1)
-				oddOccurance=true;
-		}
-		
-		if((number.length()%2!=0)&&(!oddOccurance))
-		{
-			return false;
-			
-		}
-		else if((number.length()%2==0)&&(oddOccurance))
-		{
-			return false;
-		}
-		return true;
+	public static int palindrome(int [] arr) {
+	     int max = Integer.MIN_VALUE;
+	     for(int i=0;i<arr.length;i++) {
+	    	 boolean value = BiggestPalindrome.ispalindrome(arr[i]);
+	    	if(value==true && arr[i]>max) {
+	    		max=arr[i];
+	    	}
+	     }
+	     return max;
+	     					
 	}
 
 }

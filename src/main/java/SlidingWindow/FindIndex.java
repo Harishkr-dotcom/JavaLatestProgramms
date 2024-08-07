@@ -1,5 +1,5 @@
 package SlidingWindow;
-//Find Subarray with given sum | Set 1 (Non-negative Numbers)
+//Find Subarray with given sum | Set 1 (Non-negative Numbers) or two sum
 public class FindIndex {
 	public static void main(String[] args) {
 		int[] arr = { 1, 4, 20, 3, 10, 5 };

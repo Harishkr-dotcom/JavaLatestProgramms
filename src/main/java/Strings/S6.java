@@ -5,40 +5,31 @@ import java.util.List;
 
 public class S6 {
 	public static void main(String[] args) {
-		testGeneratePermutations("ABC");
-		testGeneratePermutations("123");
-		testGeneratePermutations("A");
-		testGeneratePermutations("");
+		String s1 = "KAR";
+		System.out.println(generateallpermutation(s1));
 	}
 
-	public static void testGeneratePermutations(String str) {
-		List<String> permutations = generatePermutations(str);
-		System.out.println("Permutations of \"" + str + "\": " + permutations);
+	public static void swap(char[] c, int i, int j) {
+		char temp = c[i];
+		c[i] = c[j];
+		c[j] = temp;
 	}
 
-	public static List<String> generatePermutations(String str) {
-		List<String> result = new ArrayList<>();
-		permute(str, 0, str.length() - 1, result);
-		return result;
-	}
-
-	private static void permute(String str, int l, int r, List<String> result) {
-		if (l == r) {
-			result.add(str);
+	public static void generatepermutation(char[] c, int index, List<String> list) {
+		if (index == c.length - 1) {
+			list.add(new String(c));
 		} else {
-			for (int i = l; i <= r; i++) {
-				str = swap(str, l, i);
-				permute(str, l + 1, r, result);
-				str = swap(str, l, i); // backtrack
+			for (int i = index; i < c.length; i++) {
+				swap(c, index, i);
+				generatepermutation(c, index+1, list);
+				swap(c, index, i);
 			}
 		}
 	}
 
-	public static String swap(String a, int i, int j) {
-		char[] charArray = a.toCharArray();
-		char temp = charArray[i];
-		charArray[i] = charArray[j];
-		charArray[j] = temp;
-		return String.valueOf(charArray);
+	public static List<String> generateallpermutation(String s) {
+		List<String> result = new ArrayList<String>();
+		generatepermutation(s.toCharArray(), 0, result);
+		return result;
 	}
 }

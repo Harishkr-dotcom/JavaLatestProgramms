@@ -9,11 +9,11 @@ import java.util.Set;
 public class General {
 
 	public static void main(String[] args) {
-		Map<String, Integer> mp = new HashMap<String, Integer>();
-		mp.put("Harish", 1);
-		mp.put("Kavya", 2);
-	   System.out.println(mp.containsKey("Harish"));
-	   System.out.println(mp.get("Kavya"));
+		String TESTUSR1 = "orcladmin";
+		String usrRow = "//td[text()='" + TESTUSR1 + "']";
+		String s2 = "(//td[text()='" + TESTUSR1 + "'])[2]";
+		System.out.println(TESTUSR1);
+		System.out.println(s2);
 
 	}
 

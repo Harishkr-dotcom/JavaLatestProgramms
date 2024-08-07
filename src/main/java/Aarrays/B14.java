@@ -13,23 +13,22 @@ import java.util.ArrayList;
 in java*/
 public class B14 {
 	public static void main(String[] args) {
-        char[] set = {'a', 'b'};
-        int k = 4;
-        generateAllStrings(set, k, "");
-    }
+		char[] set = { 'a', 'b' };
+		int k = 3;
+		generateAllStrings(set, k, "");
+	}
 
-    public static void generateAllStrings(char[] set, int k, String prefix) {
-        if (k == 0) {
-            System.out.println(prefix);
-            return;
-        }
+	public static void generateAllStrings(char[] set, int k, String prefix) {
+		if (k == 0) {
+			System.out.println(prefix);
+			return;
+		}
 
-        for (int i = 0; i < set.length; i++) {
-            String newPrefix = prefix + set[i];
-            generateAllStrings(set, k - 1, newPrefix);
-        }
-        
+		for (int i = 0; i < set.length; i++) {
+			String newPrefix = prefix + set[i];
+			generateAllStrings(set, k - 1, newPrefix);
+		}
 
-    }
+	}
 
 }

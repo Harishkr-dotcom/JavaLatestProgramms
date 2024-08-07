@@ -1,5 +1,6 @@
 package Aarrays;
 // **Find All Subarrays with a Given Sum**:
+//Two sum
 //- Write a function that finds all subarrays in a given array that sum up to a given value.
 
 import java.util.ArrayList;

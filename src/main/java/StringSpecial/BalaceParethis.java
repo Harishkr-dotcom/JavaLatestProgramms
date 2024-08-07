@@ -4,36 +4,27 @@ import java.util.Stack;
 //33. **Balanced Parentheses**: Write a function to check if the parentheses in a string are balanced.
 
 public class BalaceParethis {
-	 public static boolean isBalanced(String s) {
-	        Stack<Character> stack = new Stack<>();
+	public static boolean isBalanced(String str) {
+        Stack<Character> stack = new Stack<>();
 
-	        // Traverse each character in the string
-	        for (char c : s.toCharArray()) {
-	            switch (c) {
-	                case '(':
-	                    // Push opening parenthesis onto the stack
-	                    stack.push(c);
-	                    break;
-	                case ')':
-	                    // For closing parenthesis, check if stack is empty or top does not match
-	                    if (stack.isEmpty() || stack.pop() != '(') {
-	                        return false;
-	                    }
-	                    break;
-	                // Ignore any non-parenthesis characters
-	                default:
-	                    break;
-	            }
-	        }
-
-	        // If the stack is empty, all opening parentheses were matched
-	        return stack.isEmpty();
-	    }
-
+        for (char ch : str.toCharArray()) {
+            if (ch == '(') {
+                stack.push(ch);
+            } else if (ch == ')') {
+                if (stack.isEmpty()) {
+                    return false; // Unmatched closing parenthesis
+                }
+                stack.pop();
+            }
+        }
+        // If stack is empty, all opening parentheses had matching closing parentheses
+        return stack.isEmpty();
+    }
 	    public static void main(String[] args) {
 	        String s1 = "()";
 	        String s2 = "(()())";
 	        String s3 = "(()";
+	        //String s3 = ")";
 	        String s4 = "())";
 	        String s5 = "(a(b)c)d"; // Non-parenthesis characters should be ignored
 

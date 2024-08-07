@@ -1,34 +1,29 @@
 package Aarrays;
-
+//Given an integer array nums, find the sub arraywith the largest sum, and return its sum.
+//Example 1:
+//Input: nums = [-2,1,-3,4,-1,2,1,-5,4]
+//Output: 6
+//Explanation: The subarray [4,-1,2,1] has the largest sum 6
 public class B11 {
-	 public static void main(String[] args) {
-	        int[] arr = {-2, 1, -3, 4, -1, 2, 1, -5, 4};
+	public static void main(String[] args) {
+		int[] arr = { -2, 1, -3, 4, -1, 2, 1, -5, 4 };
+		int maxSum = findMaxsubarray(arr);
+		System.out.println("Maximum Subarray Sum: " + maxSum);
+	}
 
-	        int maxSum = maxSubArray(arr);
-
-	        System.out.println("Maximum Subarray Sum: " + maxSum);
-	    }
-
-	 public static int maxSubArray(int[] nums) {
-	        if (nums == null || nums.length == 0) {
-	            throw new IllegalArgumentException("Array should not be null or empty");
-	        }
-	        
-	        int maxCurrent = nums[0];
-	        int maxGlobal = nums[0];
-	        
-	        for (int i = 1; i < nums.length; i++) {
-	            maxCurrent = Math.max(nums[i], maxCurrent + nums[i]);
-	            if (maxCurrent > maxGlobal) {
-	                maxGlobal = maxCurrent;
-	            }
-	        }
-	        
-	        return maxGlobal;
-	    }
+	public static int findMaxsubarray(int [] a) {
+		int maxcurrent = a[0];
+		int maxglobal = a[0];
+		for(int i=0;i<a.length;i++) {
+			maxcurrent = Math.max(a[i],maxcurrent+a[i]);
+			if(maxcurrent>maxglobal) {
+				maxglobal = maxcurrent;
+			}
+		}
+		return maxglobal;
+	}
 
 }
-
 
 /*
  * Certainly! Let's trace through each iteration of Kadane's Algorithm with the

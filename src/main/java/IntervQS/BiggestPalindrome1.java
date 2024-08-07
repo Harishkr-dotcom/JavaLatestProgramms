@@ -42,13 +42,13 @@ public class BiggestPalindrome1 {
 
     public static void main(String[] args) {
         //int[] arr1 = {1, 112, 11};
-       // int[] arr2 = {1, 232, 5455455, 909090, 161};
+        int[] arr2 = {1, 232, 5455455, 909090, 161};
         //int[] arr3 = {14, 2342, 55454545, 9090940, 1641};
-    	int[] arr4 = {9090940};
+    	//int[] arr4 = {9090940};
 
        // System.out.println("Largest palindromic number in arr1: " + largestPalindromicNumber(arr1)); // 112
         //System.out.println("Largest palindromic number in arr2: " + largestPalindromicNumber(arr2)); // 5545455
-        System.out.println("Largest palindromic number in arr3: " + largestPalindromicNumber(arr4)); // -1
+        System.out.println("Largest palindromic number in arr3: " + largestPalindromicNumber(arr2)); // -1
     }
 
 }

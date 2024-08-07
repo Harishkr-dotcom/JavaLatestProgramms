@@ -1,30 +1,30 @@
 package Strings;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashSet;
+import java.util.Set;
 
 public class S7 {
-	 public static void main(String[] args) {
-	        testFindAllSubstrings("abc");
-	        testFindAllSubstrings("abcd");
-	        testFindAllSubstrings("a");
-	        testFindAllSubstrings("");
-	    }
+	public static void main(String[] args) {
+		String str = "ABC";
+		Set<String> substrings = findAllSubstrings(str);
+		System.out.println(substrings);
+	}
 
-	    public static void testFindAllSubstrings(String str) {
-	        List<String> substrings = findAllSubstrings(str);
-	        System.out.println("All Substrings of \"" + str + "\": " + substrings);
-	    }
+	public static Set<String> findAllSubstrings(String str) {
+		Set<String> substrings = new HashSet<>();
 
-	    public static List<String> findAllSubstrings(String str) {
-	        List<String> result = new ArrayList<>();
+		if (str == null || str.isEmpty()) {
+			return substrings;
+		}
 
-	        for (int i = 0; i < str.length(); i++) {
-	            for (int j = i + 1; j <= str.length(); j++) {
-	                result.add(str.substring(i, j));
-	            }
-	        }
+		int length = str.length();
+		for (int i = 0; i < length; i++) {
+			for (int j = i + 1; j <= length; j++) {
+				substrings.add(str.substring(i, j));
+			}
+		}
 
-	        return result;
-	    }
+		return substrings;
+	}
+
 }
