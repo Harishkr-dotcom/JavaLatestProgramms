@@ -18,13 +18,13 @@ public class PalindromeSubrings {
 		int count = 0;
 
 		// Expand around each character for odd-length palindromes
-		for (int center = 0; center < n; center++) {
-			count += expandAroundCenter(s, center, center); // Odd length palindromes
+		for (int i = 0; i < n; i++) {
+			count += expandAroundCenter(s, i, i); // Odd length palindromes
 		}
 
 		// Expand around each pair of consecutive characters for even-length palindromes
-		for (int center = 0; center < n - 1; center++) {
-			count += expandAroundCenter(s, center, center + 1); // Even length palindromes
+		for (int j = 0; j < n - 1; j++) {
+			count += expandAroundCenter(s, j, j + 1); // Even length palindromes
 		}
 
 		return count;

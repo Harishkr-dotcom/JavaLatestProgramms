@@ -17,7 +17,6 @@ public class LongestPalindromicSubstring {
 				longest = evenPalindrome;
 			}
 		}
-
 		return longest;
 	}
 

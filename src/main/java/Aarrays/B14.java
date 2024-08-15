@@ -13,7 +13,7 @@ import java.util.ArrayList;
 in java*/
 public class B14 {
 	public static void main(String[] args) {
-		char[] set = { 'a', 'b' };
+		char[] set = { 'a', 'b' , 'c'};
 		int k = 3;
 		generateAllStrings(set, k, "");
 	}
