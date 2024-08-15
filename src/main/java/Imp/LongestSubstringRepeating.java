@@ -11,28 +11,18 @@ public class LongestSubstringRepeating {
 		int[] count = new int[26]; // Frequency count for letters A-Z
 		int start = 0;
 		int maxLength = 0;
-		int maxCount = 0; // Maximum frequency of a single character in the current window
-
-		for (int end = 0; end < s.length(); end++) {
-			char endChar = s.charAt(end);
+		int maxCount = 0;
+		for (int i = 0; i < s.length(); i++) {
+			char endChar = s.charAt(i);
 			count[endChar - 'A']++;
-
-			// Update the maximum frequency of a single character in the current window
 			maxCount = Math.max(maxCount, count[endChar - 'A']);
-
-			// Current window size is end - start + 1
-			// If the window size minus the count of the most frequent character is greater
-			// than k, the window is invalid
-			if (end - start + 1 - maxCount > k) {
+			if (i - start + 1 - maxCount > k) {
 				char startChar = s.charAt(start);
 				count[startChar - 'A']--;
 				start++;
 			}
-
-			// Calculate the maximum length of the valid window
-			maxLength = Math.max(maxLength, end - start + 1);
+			maxLength = Math.max(maxLength, i - start + 1);
 		}
-
 		return maxLength;
 	}
 }
