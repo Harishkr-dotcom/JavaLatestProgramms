@@ -15,14 +15,14 @@ public class B13 {
 	public static void rotate(int[] nums, int k) {
 		int n = nums.length;
 		k = k % n;
-		reverse(nums, 0, n - 1);
-		reverse(nums, 0, k - 1);
-		reverse(nums, k, n - 1);
+		reverse(nums, 0, n - 1); //5 4 3 2 1 
+		reverse(nums, 0, k - 1); //4 5 3 2 1 
+		reverse(nums, k, n - 1); //4 5 1 2 3 
 	}
 
 	public static void main(String[] args) {
-		int[] nums = { 1, 2, 3, 4, 5, 6, 7 };
-		int k = 3;
+		int[] nums = { 1, 2, 3, 4, 5};
+		int k = 4;
 		rotate(nums, k);
 		// Output the rotated array
 		System.out.println("Rotated Array: ");
