@@ -33,6 +33,8 @@ public class B17 {
     public static void main(String[] args) {
         int[] arr1 = {1, 2, 3, 4, 5, 6};
         int targetSum1 = 9;
+        int[] arr4 = {1, 2, 3, 4, 5, 6};
+        int targetSum4 = 10;
         int[] arr2 = {1, 2, 3, 7, 5};
         int targetSum2 = 12;
         int[] arr3 = {2, 2, 2, 2, 2};
@@ -41,7 +43,8 @@ public class B17 {
         List<int[]> subarrays1 = findAllSubarraysWithSum(arr1, targetSum1);
         List<int[]> subarrays2 = findAllSubarraysWithSum(arr2, targetSum2);
         List<int[]> subarrays3 = findAllSubarraysWithSum(arr3, targetSum3);
-
+        List<int[]> subarrays4 = findAllSubarraysWithSum(arr4, targetSum4);
+        
         System.out.println("Subarrays with sum " + targetSum1 + ":");
         for (int[] subarray : subarrays1) {
             System.out.println("Start index: " + subarray[0] + ", End index: " + subarray[1]);
@@ -54,6 +57,11 @@ public class B17 {
 
         System.out.println("\nSubarrays with sum " + targetSum3 + ":");
         for (int[] subarray : subarrays3) {
+            System.out.println("Start index: " + subarray[0] + ", End index: " + subarray[1]);
+        }
+        
+        System.out.println("\nSubarrays with sum " + targetSum4 + ":");
+        for (int[] subarray : subarrays4) {
             System.out.println("Start index: " + subarray[0] + ", End index: " + subarray[1]);
         }
     }

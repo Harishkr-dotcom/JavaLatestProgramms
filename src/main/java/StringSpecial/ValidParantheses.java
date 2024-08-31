@@ -7,28 +7,21 @@ public class ValidParantheses {
 	public static boolean isValid(String s) {
 		Stack<Character> stack = new Stack<>();
 		for (char ch : s.toCharArray()) {
-			switch (ch) {
-			case '(':
-			case '[':
-			case '{':
+			if (ch == '(' || ch == '[' || ch == '{') {
 				stack.push(ch);
-				break;
-			case ')':
+			} else if (ch == ')') {
 				if (stack.isEmpty() || stack.pop() != '(') {
 					return false;
 				}
-				break;
-			case ']':
+			} else if (ch == ']') {
 				if (stack.isEmpty() || stack.pop() != '[') {
 					return false;
 				}
-				break;
-			case '}':
+			} else if (ch == '}') {
 				if (stack.isEmpty() || stack.pop() != '{') {
 					return false;
 				}
-				break;
-			default:
+			} else {
 				// Invalid character (not a parenthesis)
 				return false;
 			}

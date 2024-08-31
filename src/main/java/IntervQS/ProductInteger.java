@@ -29,7 +29,6 @@ public class ProductInteger {
 	public static int [] getproduct(int[] a) {
 		int[] result = new int[a.length];
 		for (int i = 0; i < a.length; i++) {
-			int current = a[i];
 			int max = 1;
 			for (int j = 0; j < a.length; j++) {
 				if (j != i) {

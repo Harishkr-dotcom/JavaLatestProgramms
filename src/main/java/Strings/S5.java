@@ -3,17 +3,13 @@ package Strings;
 public class S5 {
 	public static void main(String[] args) {
 		String mainString = "Hello World!";
-		String subString = "Hello";
+		String subString = "World";
 
 		boolean result = isSubstring(mainString, subString);
 		System.out.println("Is the substring present? " + result);
 	}
 
 	public static boolean isSubstring(String mainString, String subString) {
-		if (mainString == null || subString == null) {
-			return false;
-		}
-
 		int mainLength = mainString.length();
 		int subLength = subString.length();
 
