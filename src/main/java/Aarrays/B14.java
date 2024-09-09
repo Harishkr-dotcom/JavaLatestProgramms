@@ -28,7 +28,6 @@ public class B14 {
 			String newPrefix = prefix + set[i];
 			generateAllStrings(set, k - 1, newPrefix);
 		}
-
 	}
 
 }

@@ -22,8 +22,11 @@ public class PrintTwoSum {
 	}
 
 	public static void main(String[] args) {
-		int[] nums = {2, 7, 11, 15 };
-		int target = 9;
+		//int[] nums = {2, 7, 11, 15 };
+		//int target = 9;
+		
+		int[] nums = {2, 4, 3, 6, 5, 1, 7};
+		int target = 8;
 		Map<Integer, Integer> result = twoSum(nums, target);
 		for (Map.Entry<Integer, Integer> entry : result.entrySet()) {
 			System.out.println(entry.getKey() + " " + entry.getValue());
