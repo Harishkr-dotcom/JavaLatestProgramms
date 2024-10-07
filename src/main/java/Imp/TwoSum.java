@@ -14,7 +14,7 @@ public class TwoSum {
 			numToIndex.put(nums[i], i);
 		}
 
-		throw new IllegalArgumentException("No two sum solution");
+		return new int[] { -1,-1};
 	}
 
 	public static void main(String[] args) {

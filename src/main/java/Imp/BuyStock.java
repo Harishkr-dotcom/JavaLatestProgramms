@@ -1,6 +1,5 @@
 package Imp;
 
-
 public class BuyStock {
 	public static int maxProfit(int[] prices) {
 		if (prices == null || prices.length == 0) {

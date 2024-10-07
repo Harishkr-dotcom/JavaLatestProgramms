@@ -10,7 +10,7 @@ public class LongestSubstringWithoutRepeating {
 
 		for (int i = 0; i < s.length(); i++) {
 			char currentChar = s.charAt(i);
-			if(charSet.contains(currentChar)) {
+			while(charSet.contains(currentChar)) {
 				charSet.remove(s.charAt(start));
 				start++;
 			}
@@ -23,7 +23,8 @@ public class LongestSubstringWithoutRepeating {
 
 	public static void main(String[] args) {
 		String s = "abcabcbb";
-		int result = lengthOfLongestSubstring(s);
+		String s1 = "Selenium";
+		int result = lengthOfLongestSubstring(s1);
 		System.out.println("Output: " + result); // Should print 3
 	}
 }

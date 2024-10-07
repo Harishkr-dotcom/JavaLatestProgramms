@@ -17,7 +17,7 @@ public class B10 {
 		for(int j=0;j<arr.length;j++){
 			System.out.print(arr[j]+" ");
 		}
-		
+		//====================
 		int[] arr1={1,0,5,94,0,6};
 		int count1=arr1.length-1;
 		for(int i=arr1.length-1; i>=0; i--){
